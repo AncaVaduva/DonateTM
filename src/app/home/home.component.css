@@ -1,0 +1,23 @@
+
+
+.md-card_container md-card{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  float: left;
+  margin-left: 50px;
+  margin-bottom: 15px;
+  width: auto;
+  height: auto;
+  word-break: break-all;
+
+
+}
+
+
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%  !important;
+}

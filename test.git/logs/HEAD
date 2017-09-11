@@ -1,0 +1,12 @@
+0000000000000000000000000000000000000000 18d3c6e73a7fad40c4d542472ce29dba1b9cf6a4 Angular CLI <angular-cli@angular.io> 1492618245 +0300	commit (initial): chore: initial commit from @angular/cli
+18d3c6e73a7fad40c4d542472ce29dba1b9cf6a4 6b1ca754e4c37cf624f06b12785dffe163780e96 i335564 <anca.vaduva@sap.com> 1493042933 +0300	commit: in progress
+6b1ca754e4c37cf624f06b12785dffe163780e96 2b2378a9bf36e1140f790c49f79fc75dcf1a0a9a i335564 <anca.vaduva@sap.com> 1493043464 +0300	commit: test
+2b2378a9bf36e1140f790c49f79fc75dcf1a0a9a 6b1ca754e4c37cf624f06b12785dffe163780e96 i335564 <anca.vaduva@sap.com> 1493043681 +0300	reset: moving to 2b2378a9bf36e1140f790c49f79fc75dcf1a0a9a^
+6b1ca754e4c37cf624f06b12785dffe163780e96 18d3c6e73a7fad40c4d542472ce29dba1b9cf6a4 i335564 <anca.vaduva@sap.com> 1493043685 +0300	reset: moving to 6b1ca754e4c37cf624f06b12785dffe163780e96^
+18d3c6e73a7fad40c4d542472ce29dba1b9cf6a4 f0a3a795f6ff120c2b72910e16ea608540cf3c2d i335564 <anca.vaduva@sap.com> 1493043765 +0300	commit: test
+f0a3a795f6ff120c2b72910e16ea608540cf3c2d f0a3a795f6ff120c2b72910e16ea608540cf3c2d i335564 <anca.vaduva@sap.com> 1493043869 +0300	checkout: moving from master to testcommit
+f0a3a795f6ff120c2b72910e16ea608540cf3c2d 9a5f4c473cc2ddfc2692fbe68a817ae1ec098687 i335564 <anca.vaduva@sap.com> 1493043877 +0300	commit: test
+9a5f4c473cc2ddfc2692fbe68a817ae1ec098687 7842ea6b46e1436c8b28a151061951a1f57d2b60 i335564 <anca.vaduva@sap.com> 1493100102 +0300	commit: add server file
+7842ea6b46e1436c8b28a151061951a1f57d2b60 f3fd8c670772f69be96683c54cbede9ab46c7f37 i335564 <anca.vaduva@sap.com> 1497507215 +0300	commit: end to end project
+f3fd8c670772f69be96683c54cbede9ab46c7f37 f3fd8c670772f69be96683c54cbede9ab46c7f37 i335564 <anca.vaduva@sap.com> 1497507328 +0300	rebase: checkout HEAD
+f3fd8c670772f69be96683c54cbede9ab46c7f37 f3fd8c670772f69be96683c54cbede9ab46c7f37 i335564 <anca.vaduva@sap.com> 1497507329 +0300	rebase finished: returning to refs/heads/master

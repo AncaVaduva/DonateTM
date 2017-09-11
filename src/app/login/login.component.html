@@ -1,0 +1,61 @@
+<md-sidenav-container class="example-container" fullscreen>
+
+  <md-sidenav #sidenav mode="side" class="app-sidenav" >
+    <span class="app-toolbar-filler"></span>
+    <app-menu></app-menu>
+
+  </md-sidenav>
+
+  <md-toolbar color="primary" set-class-when-at-top="fix-to-top" >
+    <i class="material-icons" (click)="sidenav.toggle()">menu</i>
+
+    Timisoara Doneaza
+    <span class="app-toolbar-filler"></span>
+  </md-toolbar>
+
+  <div class="md-card_container_home" >
+    <md-card class="admin0card" >
+      <md-card-title>Bine ai venit!</md-card-title>
+      <i class="material-icons">accessibility</i>
+      <md-card-content color="primary" class="cardNewCentru">
+        Salutare, pentru acces in aplicație te rog sa te autentifici!<br>
+        Multumim pentru ceea ce faci!<i class="material-icons">favorite_border</i><br>
+        Echipa Timisoara Doneaza!
+      </md-card-content>
+    </md-card>
+    <md-card  class="admin0card" style="opacity: 0.9">
+
+        <div *ngIf="loadingdata.message" >
+          <div class="alert alert-danger" >{{loadingdata.message}}</div>
+        </div>
+
+
+
+      <md-card-title>Autentificare</md-card-title>
+      <md-card-content>
+      <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+          <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
+        </div>
+
+
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+          <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+        </div>
+
+        <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">Autentificare</button>
+          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+          <a [routerLink]="['/register']" class="btn btn-link">Creare cont</a>
+        </div>
+      </form>
+      </md-card-content>
+    </md-card>
+  </div>
+</md-sidenav-container>
+<router-outlet></router-outlet>

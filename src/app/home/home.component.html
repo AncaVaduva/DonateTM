@@ -1,0 +1,113 @@
+<md-sidenav-container class="example-container" fullscreen>
+
+  <md-sidenav #sidenav mode="side" class="app-sidenav" >
+    <span class="app-toolbar-filler"></span>
+   <app-menu></app-menu>
+
+  </md-sidenav>
+
+  <md-toolbar color="primary" class="fixed-header" >
+   <i class="material-icons" (click)="sidenav.toggle()">menu</i>
+
+    Timisoara Doneaza
+    <span class="app-toolbar-filler"></span>
+  </md-toolbar><br>
+
+  <div class="md-card_container_home" >
+
+    <md-card class="admin0card" >
+      <md-card-title>Bine ai venit!</md-card-title>
+      <i class="material-icons">accessibility</i>
+      <md-card-content color="primary" class="cardNewCentru">
+        Salutare tie cel dornic de a face un bine! ne bucuram ca ai ajuns pe pagina noastra mai jos gasesti cateva informatii generale!<br>
+        Multumim pentru ceea ce faci!<i class="material-icons">favorite_border</i><br>
+        Echipa Timisoara Doneaza!
+      </md-card-content>
+    </md-card>
+
+    <md-card class="admin0card" >
+      <md-card-title>Acte necesare pentru a dona:</md-card-title>
+
+      <i class="material-icons">content_paste</i>
+      <md-card-content>
+        <ul>
+          <li>Buletin sau carte de identitate, în original</li>
+          <li>Document provizoriu de identitate, în original</li>
+          <li>Carnet de conducere eliberat în România, în original</li>
+          <li>Carte de alegător, în original</li>
+          <li>Carnet de serviciu, în cazul militarilor</li>
+          <li>Paşaport, în original</li>
+        </ul>
+      </md-card-content>
+
+    </md-card>
+
+    <md-card class="admin0card" >
+      <md-card-title>Inainte de a dona:</md-card-title>
+      <i class="material-icons">warning</i>
+
+      <md-card-content>
+        <ul>
+          <li>Este recomandabil să iei o gustare înainte de a dona;</li>
+          <li>Micul dejun poate fi bogat în lichide și glucide</li>
+          <li> Nu ai voie să consumi alcool cu 24 de ore înainte de a dona sânge;</li>
+          <li>Nu ai voie să fumezi înainte și după ce ai donat sânge</li>
+          <li>De asemenea, vino să donezi odihnit</li>
+        </ul>
+      </md-card-content>
+
+    </md-card>
+
+    <md-card class="admin0card" >
+      <md-card-title>Ce condiții trebuie să îndeplinesc pentru a dona sânge</md-card-title>
+      <i class="material-icons">warning</i>
+      <md-card-content>
+        Donatorul de sânge este orice cetățean român cu domiciliul în România sau orice cetățean al UE care are reședința în România, este sănătos și se supune regulilor de prelevare a sângelui.<br>
+        <ul>
+          <li>Vârsta cuprinsă între 18-60 ani;</li>
+          <li>Greutate peste 50 Kg</li>
+          <li>Puls regulat, 60 -100 bătăi/ minut</li>
+          <li>Tensiune arterială sistolică între 100 și 180 mmHg</li>
+          <li>Să nu fi suferit în ultimele 6 luni intervenții chirurgicale</li>
+          <li>Femeile să nu fie: însarcinate, în perioada de lăuzie, în perioada menstruală</li>
+          <li>Să nu fi consumat grăsimi sau băuturi alcoolice cu cel puțin 48 de ore înaintea donării</li>
+          <li>Să nu fii sub tratament pentru diferite afecțiuni: hipertensiune, boli de inimă, boli renale, boli psihice, boli hepatice, boli endocrine</li>
+        </ul>
+      </md-card-content>
+    </md-card>
+
+
+
+    <md-card class="admin0card" >
+      <md-card-title>Donatorii nu trebuie să aiba sau sa fi avut urmatoarele boli:</md-card-title>
+      <i class="material-icons">local_hospital</i>
+      <md-card-content>
+        <ul>
+          <li> Hepatită (de orice tip)</li>
+           <li> TBC </li>
+          <li> Sifilis</li>
+          <li> Malarie</li>
+          <li> Epilepsie și alte boli neurologice</li>
+          <li> Boli psihice</li>
+          <li> Bruceloză</li>
+          <li> Ulcer</li>
+          <li> Diabet zaharat</li>
+          <li> Boli de inimă</li>
+          <li> Boli de piele: psoriazis, vitiligo</li>
+          <li> Miopie forte peste (-) 6 dioptrii</li>
+          <li> Cancer;</li>
+        </ul>
+      </md-card-content>
+
+    </md-card>
+
+
+  </div>
+
+
+
+</md-sidenav-container>
+
+<router-outlet></router-outlet>
+
+

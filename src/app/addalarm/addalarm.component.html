@@ -1,0 +1,65 @@
+
+<md-sidenav-container class="example-container" fullscreen >
+
+  <md-sidenav #sidenav mode="side" class="app-sidenav"  opened="true" disableClose="true">
+
+    <app-menu></app-menu>
+
+  </md-sidenav>
+
+  <md-toolbar color="primary" set-class-when-at-top="fix-to-top" >
+    <i class="material-icons" (click)="sidenav.toggle()">menu</i>
+
+    Timisoara Doneaza
+    <span class="app-toolbar-filler"></span>
+  </md-toolbar>
+
+  <div class="md-card_container_home" >
+    <md-card class="admin0card"  >
+      <md-card-title>Bine ai venit!</md-card-title>
+      <i class="material-icons">accessibility</i>
+      <md-card-content color="primary" class="cardNewCentru">
+        Salutare, <br>
+        In acesta sectiune  ai posibilitatea de a adauga notificari pentr a fi la curent <br>
+        Mai jos gasesti informatiile necesare ce trebuiesc intoduse<br>
+        Multumim pentru ceea ce faci!<i class="material-icons">favorite_border</i><br>
+        Echipa Timisoara Doneaza!
+      </md-card-content>
+    </md-card>
+
+    <md-card  class="admin0card" style="opacity: 0.9">
+      <md-card-title >Adaugare notificare</md-card-title>
+      <md-card-content>
+        <!--  addcenter() &&--->
+        <form name="form" (ngSubmit)="f.form.valid && addalarm()" #f="ngForm" novalidate>
+
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !namealarm.valid }">
+            <label for="namealarm">Numele alarmei</label>
+            <input type="text" class="form-control" name="namealarm" [(ngModel)]="model.namealarm"
+                   #namealarm="ngModel"/>
+          </div>
+
+
+          <div class="form-group">
+            <label>Tipul alarmei</label>
+            <div class="radio" *ngFor="let typealarm of typesAlarm">
+              <label>
+                <input type="radio" name="typealarm" [(ngModel)]="model.typealarm" [value]="typealarm.value">
+                {{typealarm.display}}
+              </label>
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <button  class="btn btn-primary">Adauga  alarma</button>
+
+          </div>
+        </form>
+      </md-card-content>
+    </md-card>
+  </div>
+</md-sidenav-container>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,62 @@
+<md-sidenav-container class="example-container" fullscreen>
+
+  <md-sidenav #sidenav mode="side" class="app-sidenav"  >
+
+    <app-menu></app-menu>
+<!--
+    <div class="row" *ngFor="let centru of centre">
+      <div class="card card-block">
+        <h4 class="card-title">{{ centru.name }}</h4>
+        <p class="card-text">{{centru.long}}</p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+    -->
+    <md-card>
+      <md-card-header><strong>Legenda</strong></md-card-header>
+      <md-card-content>
+        <span>
+          <i class="material-icons">warning</i><span>Status: stoc la limita</span><br>
+        </span>
+        <span>
+
+        </span>
+        <i class="material-icons">check_circle</i><span>Status : stoc in regula</span><br>
+        <i class="material-icons">error</i> <span>Status : este nevoie urgenta</span><br>
+
+      </md-card-content>
+    </md-card>
+
+    <md-card>
+
+
+    </md-card>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <i class="material-icons" (click)="sidenav.toggle()">menu</i>
+
+    Timisoara Doneaza
+    <span class="app-toolbar-filler"></span>
+  </md-toolbar>
+  <div class="md-card_container">
+    <sebm-google-map   class="sebm-google-map-container" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <sebm-google-map-marker *ngFor="let centru of centre" [latitude]="centru.lat" [longitude]="centru.long"  [title]="centru.name" [iconUrl]="iconUrl">
+        <sebm-google-map-info-window >
+          <h4>{{centru.name}}</h4>
+          Situatia grupelor de sange:<br>
+          <span>Grupa 0 <i class="material-icons">warning</i></span><br>
+          Grupa A <i class="material-icons">check_circle</i><br>
+          Grupa B <i class="material-icons">error</i><br>
+          Grupa AB <i class="material-icons">error</i><br>
+        </sebm-google-map-info-window>
+      </sebm-google-map-marker>
+    </sebm-google-map>
+  </div>
+
+</md-sidenav-container>
+
+<router-outlet></router-outlet>
+
+

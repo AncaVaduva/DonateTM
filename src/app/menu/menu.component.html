@@ -1,0 +1,55 @@
+<div class="md-card_container_home" >
+  <div>
+    <md-card class="cardUser" style="padding: 10px; width: 100%">
+      <i class="material-icons">supervisor_account</i> Bine ai venit!<br>
+      <span *ngIf="Currentuser">{{Currentuser.name}} </span>
+    </md-card>
+  </div>
+
+  <div class="cardlist">
+    <md-nav-list>
+      <a md-list-item href="home"><i class="material-icons">home</i> Acasa</a>
+      <a md-list-item href="map"> <i class="material-icons">place</i> Harta</a>
+    </md-nav-list>
+  </div>
+
+  <div *ngIf="Currentuser">
+    <md-nav-list  *ngIf="Currentuser.role == 'admin_jud'">
+      <a md-list-item href="addcenter"><i class="material-icons">add_location</i> Adauga centru</a>
+      <a md-list-item href="deletecenter"><i class="material-icons">location_off</i> Sterge centru</a>
+      <a md-list-item href="addusers"><i class="material-icons">group_add</i>    Adauga utilizatori</a>
+    </md-nav-list>
+
+    <md-nav-list  *ngIf="Currentuser.role == 'admin_centru'">
+      <a md-list-item href="addempl"><i class="material-icons">group_work</i> Adauga angajati</a>
+      <a md-list-item href="adduserscenter"><i class="material-icons">group_add</i>Adauga utilizatori</a>
+    </md-nav-list>
+
+    <md-nav-list  *ngIf="Currentuser.role == 'angajat_centru'">
+      <a md-list-item href="adddonator"><i class="material-icons">add_circle</i> Adauga donator</a>
+      <a md-list-item href="searchdonator"><i class="material-icons">search</i> Cauta donator</a>
+
+    </md-nav-list>
+
+
+    <md-nav-list  *ngIf="Currentuser.role == 'client'">
+      <a md-list-item href="addalarm"><i class="material-icons">add_alert</i> Adauga notificari</a>
+
+    </md-nav-list>
+  </div>
+</div>
+
+<div class="cardFooter"  >
+  <md-nav-list >
+    <a md-list-item href="register" *ngIf="!Currentuser"><i class="material-icons">account_circle</i> Autentificare /Creare cont</a>
+
+    <span *ngIf="Currentuser">
+      <a md-list-item href="profile"  *ngIf="Currentuser">
+      <i class="material-icons">account_circle</i> Profil</a>
+    </span>
+
+
+    <a md-list-item href="" (click)="logout()"  *ngIf="Currentuser"> <i class="material-icons">account_circle</i> Dezautentificare</a>
+
+  </md-nav-list>
+</div>

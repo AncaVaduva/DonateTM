@@ -1,0 +1,67 @@
+<p>
+  adduserscenter works!
+</p>
+
+<md-sidenav-container class="example-container" fullscreen>
+
+  <md-sidenav #sidenav mode="side" class="app-sidenav"  opened="true" disableClose="true">
+    <span class="app-toolbar-filler"></span>
+    <app-menu></app-menu>
+  </md-sidenav>
+
+  <md-toolbar color="primary" >
+    <i class="material-icons" (click)="sidenav.toggle()">menu</i>
+    Timisoara Doneaza
+    <span class="app-toolbar-filler"></span>
+  </md-toolbar>
+
+  <div class="md-card_container_home" >
+    <md-card class="admin0card" >
+      <md-card-title>Bine ai venit!</md-card-title>
+      <i class="material-icons">accessibility</i>
+      <md-card-content color="primary" class="cardNewCentru">
+        Salutare, <br>
+        în aceasta sectiune ai posibilitatea de a adauga noi utilizatori de centru<br>
+
+        Multumim pentru ceea ce faci!<i class="material-icons">favorite_border</i><br>
+        Echipa Timisoara Doneaza!
+      </md-card-content>
+    </md-card>
+
+    <md-card  class="admin0card" style="opacity: 0.9">
+      <md-card-title>Adaugare utilizatori centru de donare</md-card-title>
+      <md-card-content>
+        <!--  addcenter() &&--->
+        <form name="form" (ngSubmit)="f.form.valid && adduserscenter()" #f="ngForm" novalidate>
+
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
+            <label for="name">Numele</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="model.name"
+                   #name="ngModel" required />
+            <div *ngIf="f.submitted && !name.valid" class="help-block">Numele este obligatoriu</div>
+          </div>
+
+
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="emailuser"
+                   [(ngModel)]="model.email" #address="ngModel" required>
+            <div *ngIf="f.submitted && !email.valid" class="help-block">Email-ul este obligatorie</div>
+          </div>
+
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+            <label for="password">Parola initiala</label>
+            <input type="text" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+            <div *ngIf="f.submitted && !password.valid" class="help-block">Parola este necesara</div>
+          </div>
+
+          <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Adauga utilizator</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+          </div>
+        </form>
+      </md-card-content>
+    </md-card>
+  </div>
+</md-sidenav-container>
+<router-outlet></router-outlet>

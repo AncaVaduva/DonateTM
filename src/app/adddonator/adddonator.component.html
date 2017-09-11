@@ -1,0 +1,82 @@
+
+<md-sidenav-container class="example-container" fullscreen>
+
+  <md-sidenav #sidenav mode="side" class="app-sidenav"  opened="true" disableClose="true">
+    <span class="app-toolbar-filler"></span>
+    <app-menu></app-menu>
+  </md-sidenav>
+
+  <md-toolbar color="primary" >
+    <i class="material-icons" (click)="sidenav.toggle()">menu</i>
+    Timisoara Doneaza
+    <span class="app-toolbar-filler"></span>
+  </md-toolbar>
+
+  <div class="md-card_container_home" >
+    <md-card class="admin0card" >
+      <md-card-title>Bine ai venit!</md-card-title>
+      <i class="material-icons">accessibility</i>
+      <md-card-content color="primary" class="cardNewCentru">
+        Salutare, <br>
+        în aceasta sectiune ai posibilitatea de a adauga  noi donatori de sange<br>
+
+        Multumim pentru ceea ce faci!<i class="material-icons">favorite_border</i><br>
+        Echipa Timisoara Doneaza!
+      </md-card-content>
+    </md-card>
+
+    <md-card  class="admin0card" style="opacity: 0.9">
+      <md-card-title>Adaugare donatori</md-card-title>
+      <md-card-content>
+        <!--  addcenter() &&--->
+        <form name="form" (ngSubmit)="f.form.valid && adddonator()" #f="ngForm" novalidate>
+
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
+            <label for="name">Numele</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
+            <div *ngIf="f.submitted && !name.valid" class="help-block">Numele este obligatoriu</div>
+          </div>
+
+
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !prenume.valid }">
+            <label for="prenume">Prenume</label>
+            <input type="text" class="form-control" name="prenume" [(ngModel)]="model.prenume" #prenume="ngModel" required>
+            <div *ngIf="f.submitted && !prenume.valid" class="help-block">Prenumele este obligatorie</div>
+          </div>
+
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !age.valid }">
+            <label for="age">Varsta</label>
+            <input type="text" class="form-control" name="age" [(ngModel)]="model.age" #age="ngModel" required />
+            <div *ngIf="f.submitted && !age.valid" class="help-block">Varsta este necesara</div>
+          </div>
+
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !blood.valid }">
+            <label for="blood">Grupa de sange</label>
+            <input type="text" class="form-control" name="blood" [(ngModel)]="model.blood" #blood="ngModel" required />
+            <div *ngIf="f.submitted && !blood.valid" class="help-block">Grupa de sange este necesara</div>
+          </div>
+
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !address.valid }">
+            <label for="address">Adresa</label>
+            <input type="text" class="form-control" name="address" [(ngModel)]="model.address" #address="ngModel" />
+            <div *ngIf="f.submitted && !address.valid" class="help-block">Adresa este necesara</div>
+          </div>
+
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !CNP.valid }">
+            <label for="CNP">CNP-ul</label>
+            <input type="NUMBER" class="form-control" name="CNP" [(ngModel)]="model.CNP" #CNP="ngModel" required/>
+            <div *ngIf="f.submitted && !CNP.valid" class="help-block">CNP-ul este necesar</div>
+          </div>
+
+
+
+          <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Adauga donator</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+          </div>
+        </form>
+      </md-card-content>
+    </md-card>
+  </div>
+</md-sidenav-container>
+<router-outlet></router-outlet>
